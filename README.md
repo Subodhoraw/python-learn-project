@@ -1,60 +1,97 @@
-This regex pattern r'\w+\W+\d+' matches a specific sequence of characters. Let me break it down:
+# 🎰 SL**OO**T MACHINE
 
-Pattern Components:
-\w+ - Matches one or more word characters (letters, digits, underscore)
+## 🌟 Project Overview
 
-\W+ - Matches one or more non-word characters (anything not a letter, digit, or underscore)
+**SLOOT MACHINE** is a digital implementation of a classic 3-reel, 3-row slot machine game. The project focuses on demonstrating core game logic, random number generation (RNG) for fair play, and robust payline calculation.
 
-\d+ - Matches one or more digits (0-9)
+It is designed to be a simple, fun, and easy-to-run game, making it an excellent showcase for **[Your Primary Language/Framework, e.g., Python, JavaScript, Unity]** game development fundamentals.
 
-What it matches:
-This pattern looks for sequences where:
+## ✨ Key Features
 
-One or more word characters appear first
+* **Classic 3x3 Reel Layout:** Standard three reels and three rows for a familiar slot experience.
+* **Dynamic Payouts:** Implements a comprehensive pay table with configurable win multipliers.
+* **Credit System:** Includes a persistent player credit/balance system to track wins and losses.
+* **Adjustable Bet:** Allows the player to adjust the bet amount per spin.
+* **[Add a unique feature if you have one, e.g., ASCII/Terminal Graphics, Animation]**
 
-Followed by one or more non-word characters
+## ⚙ Technology Stack
 
-Ending with one or more digits
+| Component | Technology/Tool | Purpose |
+| :--- | :--- | :--- |
+| **Core Logic** | **[Your Language, e.g., Python, C#, JavaScript]** | Handles the reel spin, RNG, and game state. |
+| **Graphics/UI** | **[Your Framework/Library, e.g., Pygame, React, Console/CLI]** | Manages the display of the reels and game information. |
+| **RNG** | `random` module (or custom PRNG) | Ensures random and unbiased reel stops. |
+| **Persistence** | **[e.g., SQLite, JSON File, LocalStorage]** | Stores the player's balance and game stats. |
 
-Examples:
-✅ Matches:
+## 🛠 Installation
 
-"hello!123"
+### Prerequisites
 
-"test@456"
+* [List any dependencies, e.g., Python 3.8+]
+* [List any necessary libraries, e.g., If using Python: `pip install pygame`]
 
-"word#$%789"
+### Steps
 
-"abc_!999"
+1.  **Clone the Repository:**
+    ```bash
+    git clone [https://github.com/YourUsername/Sloot-Machine.git](https://github.com/YourUsername/Sloot-Machine.git)
+    cd Sloot-Machine
+    ```
 
-❌ Does NOT match:
+2.  **Install Dependencies:**
+    ```bash
+    # Replace with your actual installation command
+    pip install -r requirements.txt
+    ```
 
-"hello123" (no non-word characters between)
+3.  **Run the Game:**
+    ```bash
+    # Replace with your actual run command
+    python main_game.py 
+    ```
+    or
+    ```bash
+    npm start
+    ```
 
-"!123" (no word characters at start)
+---
 
-"hello!" (no digits at end)
+## ▶ How to Play
 
-"hello 123" (space is a non-word character, so this WOULD match)
+The game runs in the **[Console/Browser/GUI Window]**.
 
-Python Example:
-python
-import re
+1.  **Start:** The game starts with a default balance of **1000 credits**.
+2.  **Set Bet:** Enter your desired bet amount when prompted (or use the designated button/slider).
+3.  **Spin:** Press the **[Key or Button, e.g., 'S', SPACE]** to spin the reels.
+4.  **Payouts:** The game automatically calculates winnings based on the pay table below and updates your balance.
 
-pattern = r'\w+\W+\d+'
-test_strings = ["hello!123", "test@456", "abc123", "!123", "word#$%789"]
+### Pay Table (Example)
 
-for test in test_strings:
-    match = re.search(pattern, test)
-    print(f"'{test}': {'Match' if match else 'No match'}")
-Output:
+| Symbols (Line) | Multiplier (x Bet) | Description |
+| :--- | :--- | :--- |
+| **🍒 🍒 🍒** | **100x** | The GRAND JACKPOT! |
+| **7️⃣ 7️⃣ 7️⃣** | **50x** | Three Sevens! |
+| **🔔 🔔 🔔** | **20x** | Three Bells. |
+| **Any Bar (3)** | **5x** | Any mix of the BAR symbols. |
+| **Any Cherry (1)** | **2x** | One Cherry on the first reel. |
 
-text
-'hello!123': Match
-'test@456': Match
-'abc123': No match  # Missing non-word characters
-'!123': No match    # Missing word characters at start
-'word#$%789': Match
-The pattern is useful for finding text patterns where word content is separated from numbers by punctuation or other non-word characters.
+*(The pay table is defined in `config.py`)*
+
+## 🤝 Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1.  Fork the Project.
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
+3.  Commit your Changes (`git commit -m 'Add new win feature'`).
+4.  Push to the Branch (`git push origin feature/AmazingFeature`).
+5.  Open a Pull Request.
+
+## 📝 License
+
+Distributed under the **[MIT License]**. See `LICENSE` for more information.
+
+---
+
 
 
